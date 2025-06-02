@@ -7,10 +7,10 @@ export default function MealsOverview({ route }) {
 
   const displayedMeals = MEALS.filter((mealItemData) => {
     return mealItemData.categoryIds.indexOf(catId) >= 0;
-  }); // ✅ this closing brace was missing
+  });
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title} />;
+    return <MealItem title={itemData.item.title}  imageUrl={itemData.item.imageUrl}/>;
   }
 
   return (
