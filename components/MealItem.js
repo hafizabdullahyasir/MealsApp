@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 
 export default function MealItem({title}){
     return (
-        <View style={styles.mealItem}>
+        <View >
 
            <Text>{title}</Text>
 
