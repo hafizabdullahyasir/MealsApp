@@ -1,7 +1,7 @@
 import { View, Text , Pressable, Image, StyleSheet   } from "react-native";
 
 
-export default function MealItem({title, imageUrl}){
+export default function MealItem({title, imageUrl, duration, complexity, affordability}){
     return (
         <View >
 
@@ -15,7 +15,11 @@ export default function MealItem({title, imageUrl}){
 
           </View>
 
-
+       <View>
+        <Text>{duration}</Text>
+        <Text>{complexity}</Text>
+        <Text>{affordability}</Text>
+       </View>
 
           </Pressable>
 
