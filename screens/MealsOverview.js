@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";  
 import { MEALS } from "../data/dummy-data";
-
+import MealItem from "../components/MealItem";
 
 export default function MealsOverview({route}) {
 const catId = route.params.categoryId;
@@ -9,12 +9,24 @@ const catId = route.params.categoryId;
 
 const displayedMeals = MEALS.filter((mealItemData)=>{
     return mealItemData.categoryIds.indexOf(catId) >= 0;
+
+function renderMealItem(itemData){
+    return <MealItem title={itemData.item.title} />
+}
+
+
 })
 
 
     return (
         <View style={styles.container}>
-                <Text>Meals Overview - {catId}</Text>
+               <FlatList 
+               data={displayedMeals}
+               keyExtractor={(itemData)=>itemData.id}
+               renderItem={renderMealItem}
+               
+               
+               />
               
         </View>
     )
