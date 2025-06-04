@@ -40,7 +40,7 @@ export default function CategoriesScreen({navigation}) {
 const styles = StyleSheet.create({
     screen: {
     flex: 1,
-    marginTop: 50,
+
    
       },
 })
