@@ -8,7 +8,7 @@ import MealsDetail from './screens/MealsDetail';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Favourite from './screens/Favourite';
 import { Ionicons } from '@expo/vector-icons';
-
+import FavoritesContextProvider from './store/context/favorites-context';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -23,11 +23,11 @@ function DrawerNavigator(){
 
 
 
-
 export default function App() {
   return (
     <>
     <StatusBar style="dark" />
+<FavoritesContextProvider>
     <NavigationContainer  > 
       <Stack.Navigator screenOptions={{ headerStyle: {backgroundColor: '#2890D6'}, contentStyle: {backgroundColor: 'white'}}}>
         <Stack.Screen name="Drawer"  options={{headerShown: false }}  component={DrawerNavigator} />
@@ -42,6 +42,7 @@ export default function App() {
                 <Stack.Screen name='MealsDetail' options={{title: "Meals Details"}} component={MealsDetail} />
                     </Stack.Navigator>
     </NavigationContainer>
+ </FavoritesContextProvider>   
       </>
  
   );
